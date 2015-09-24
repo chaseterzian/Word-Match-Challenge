@@ -13,3 +13,93 @@
  *= require_tree .
  *= require_self
  */
+.btn {
+  -webkit-border-radius: 6;
+  -moz-border-radius: 6;
+  border-radius: 6px;
+  font-family: Courier New;
+  color: #ffffff;
+  font-size: 15px;
+  background: #000000;
+  padding: 5px 10px 5px 10px;
+  /*border-right: solid #666666 0px;*/
+  /*border-bottom: solid #666666 0px;*/
+  /*border-left: solid #666666 0px;*/
+  text-decoration: none;
+}
+
+.col-1{
+  /*width: 8.33333%;*/
+  width: 8.3%;
+  float: left;
+  border: 1px solid transparent;
+}
+.col-2{
+  /*width: 16.66666%;*/
+  width: 16.6%;
+  float: left;
+  border: 1px solid transparent;
+}
+.col-3{
+  /*width: 25%;*/
+  width: 24.9%;
+  float: left;
+  border: 1px solid transparent;
+}
+.col-4{
+  /*width: 33.33333%;*/
+  width: 33.3%;
+  float: left;
+  /*border: 1px solid red;*/
+  border: 1px solid transparent;
+}
+.col-5{
+  /*width: 41.66666%;*/
+  width: 41.6%;
+  float: left;
+  /*border: 1px solid red;*/
+  border: 1px solid transparent;
+}
+.col-6{
+  width: 50.00%;
+  float: left;
+/*border: 1px solid red;*/
+border: 1px solid transparent;
+}
+.col-7{
+  width: 58.33333%;
+  float: left;
+/*border: 1px solid red;*/
+border: 1px solid transparent;
+}
+.col-8{
+  width: 66.66666%;
+  float: left;
+/*border: 1px solid red;*/
+border: 1px solid transparent;
+}
+.col-9{
+  /*width: 75.00%;*/
+  width: 74.65%;
+  float: left;
+/*border: 1px solid red;*/
+border: 1px solid transparent;
+}
+.col-10{
+  width: 83.33333%;
+  float: left;
+/*border: 1px solid red;*/
+border: 1px solid transparent;
+}
+.col-11{
+  width: 91.66666%;
+  float: left;
+/*border: 1px solid red;*/
+border: 1px solid transparent;
+}
+.col-12{
+  width: 100.00%;
+  float: left;
+  /*border: 1px solid red;*/
+  border: 1px solid transparent;
+}
