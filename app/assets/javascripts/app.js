@@ -1,6 +1,9 @@
 $(document).ready(function() {
 	
-	alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+	alphabet = ['a','A','b','B','c','C','d','D','e','E','f','F','g','G','h','H','i','I', 
+	            'j','J','k','K','l','L','m','M','n','N','o','O','p','P','q','Q','r','R', 
+	            's','S','t','T','u','U','v','V','w','W','x','X','y','Y','z','Z'];
+	            console.log(alphabet.length);
 	var userWordStored = [];
 	var computerGuessing = "a";
 	var computerGuessPrintout = document.getElementById("computer-guess");
@@ -18,7 +21,7 @@ $(document).ready(function() {
 		
 		for (var i=0; i<alphabet.length; i++) {
 			computerGuessing = alphabet[i];
-			guessInfo.innerHTML = 'I think I will sit this one out';
+			guessInfo.innerHTML = 'This 1 letter word stumps me..';
 			if (computerGuessing === userWordStored[0]) {
 				guessInfo.innerHTML = 'it took me ' + (i+1) + ' tries';
 				computerGuessPrintout.innerHTML = computerGuessing;
@@ -33,19 +36,20 @@ $(document).ready(function() {
 			for (var x=0; x<alphabet.length; x++) {
 				
 				computerGuessing = alphabet[i] + alphabet[x];
-				console.log(computerGuessing);
-				console.log(userWordStored);
-				
-				guessInfo.innerHTML = 'I think I will sit this one out';
+				guessInfo.innerHTML = 'This 2 letter word stumps me..';
 					
 					if (computerGuessing === userWordStored[0]) {
 						
 						if (i===0) { 
-							guessInfo.innerHTML = 'it took me ' + ( 26+(x+1) ) + ' guesses'; 
+							guessInfo.innerHTML = 'it took me ' + ( 52+x+1 ) + ' tries'; 
 							console.log("inside i===0");
 							console.log(i);
 							console.log(x);
 							console.log("inside i===0");
+							console.log(computerGuessing);
+							console.log(userWordStored);
+							computerGuessPrintout.innerHTML = computerGuessing;
+
 
 							return;
 						}
@@ -54,8 +58,11 @@ $(document).ready(function() {
 						console.log(i);
 						console.log(x);
 						console.log("when i isnt 0");
+						console.log(computerGuessing);
+						console.log(userWordStored);
 
-						guessInfo.innerHTML = 'it took me ' + ( (i*26)+(x+1) ) + ' guesses';
+
+						guessInfo.innerHTML = 'it took me ' + ( (52*i+52) + (x+1) ) + ' tries';
 						
 						computerGuessPrintout.innerHTML = computerGuessing;
 						
