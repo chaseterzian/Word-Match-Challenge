@@ -17,16 +17,12 @@ $(document).ready(function() {
 		var startTimeInMs = new Date().getTime();//V
 		var endTimeInMs = 0;//V
 		var searchDurationInMs = 0;//V
-		console.log(searchDurationInMs);
 
 		var userInput = document.getElementById('user-word-input').value;
 		userWordStored.push(userInput);//Stores user input value
 		var userWordDisplay = document.getElementById("user-word-display");
 		userWordDisplay.innerHTML = userWordStored;//Shows users word
 		
-		
-		
-
 
 		for (var i=0; i<alphabet.length; i++) {
 			tryCount = tryCount+1;
@@ -71,6 +67,48 @@ $(document).ready(function() {
 							guessInfo.innerHTML = 'it took me ' + tryCount + ' tries in ' + searchDurationInMs + ' ms'; 
 							computerGuessPrintout.innerHTML = computerGuessing;
 							return;
+					}
+				}
+			}
+		}
+
+		for (var i=0; i<alphabet.length; i++) {
+			for (var x=0; x<alphabet.length; x++) {
+				for (var y=0; y<alphabet.length; y++) {
+					for (var z=0; z<alphabet.length; z++) {
+						tryCount = tryCount+1
+						computerGuessing = alphabet[i] + alphabet[x] + alphabet[y] + alphabet[z];
+						guessInfo.innerHTML = 'This 4 letter word stumps me..';
+					
+						if (computerGuessing === userWordStored[0]) {
+							endTimeInMs = new Date().getTime();//V
+							searchDurationInMs = endTimeInMs - startTimeInMs;//V
+							guessInfo.innerHTML = 'it took me ' + tryCount + ' tries in ' + searchDurationInMs + ' ms'; 
+							computerGuessPrintout.innerHTML = computerGuessing;
+							return;
+						}
+					}
+				}
+			}
+		}
+
+		for (var i=0; i<alphabet.length; i++) {
+			for (var x=0; x<alphabet.length; x++) {
+				for (var y=0; y<alphabet.length; y++) {
+					for (var z=0; z<alphabet.length; z++) {
+						for (var ii=0; ii<alphabet.length; ii++) {
+							tryCount = tryCount+1
+							computerGuessing = alphabet[i] + alphabet[x] + alphabet[y] + alphabet[z] + alphabet[ii];
+							guessInfo.innerHTML = 'This 5 letter word stumps me..';
+						
+							if (computerGuessing === userWordStored[0]) {
+								endTimeInMs = new Date().getTime();//V
+								searchDurationInMs = endTimeInMs - startTimeInMs;//V
+								guessInfo.innerHTML = 'it took me ' + tryCount + ' tries in ' + searchDurationInMs + ' ms'; 
+								computerGuessPrintout.innerHTML = computerGuessing;
+								return;
+							}
+						}
 					}
 				}
 			}
