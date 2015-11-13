@@ -1,8 +1,18 @@
+Word Guess
+
 V2
--supports string of up to 2 characters or numbers.
+-supports a string of up to 3 characters, numbers, and/or symbols (mix and match)
 ___________________________________________________
 
-Type a string of up to two numbers and/pr characters.
 
-The program will tell you how many guesses it took to match that string 
-(in full, not character by character)
+
+Type a string of up to three characters, numbers, and/or symbols (mix and match).
+
+The program will tell you how many guesses it took to match that string, and
+how long it took.  For the program to guess to correct string, it must guess the 
+entire string, rather than letter by letter.
+
+enjoy!
+
+
+-Chase

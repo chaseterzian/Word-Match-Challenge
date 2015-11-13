@@ -7,6 +7,7 @@ $(document).ready(function() {
 	            '!','@','#','$','%','^','&','*','(',')'];
 	extraSymbols = ['-','_','+','=','[','{',']','}','\'','|',';',':',"'",'"','<','>','?','`','~'];
 
+	var tryCount = 0;
 	var userWordStored = [];
 	var computerGuessing = "a";
 	var computerGuessPrintout = document.getElementById("computer-guess");
@@ -28,64 +29,52 @@ $(document).ready(function() {
 
 
 		for (var i=0; i<alphabet.length; i++) {
+			tryCount = tryCount+1;
 			computerGuessing = alphabet[i];
 			guessInfo.innerHTML = 'This 1 letter word stumps me..';
+			
 			if (computerGuessing === userWordStored[0]) {
 				endTimeInMs = new Date().getTime();//V
 				searchDurationInMs = endTimeInMs - startTimeInMs;//V
-				
-				guessInfo.innerHTML = 'it took me ' + (i+1) + ' tries in ' + searchDurationInMs + ' ms';
+				guessInfo.innerHTML = 'it took me ' + tryCount + ' tries in ' + searchDurationInMs + ' ms';
 				computerGuessPrintout.innerHTML = computerGuessing;
 				return;
 			}
-		}//1character
-
+		}
 		
 		for (var i=0; i<alphabet.length; i++) {
 			for (var x=0; x<alphabet.length; x++) {
+				tryCount = tryCount+1
 				computerGuessing = alphabet[i] + alphabet[x];
 				guessInfo.innerHTML = 'This 2 letter word stumps me..';
 					
 					if (computerGuessing === userWordStored[0]) {
-						
-						if (i===0) { 
-							endTimeInMs = new Date().getTime();//V
-							searchDurationInMs = endTimeInMs - startTimeInMs;//V
-							
-							guessInfo.innerHTML = 'it took me ' + ( 52+x+1 ) + ' tries in ' + searchDurationInMs + ' ms'; 
-							computerGuessPrintout.innerHTML = computerGuessing;
-							return;
-						}
 						endTimeInMs = new Date().getTime();
 						searchDurationInMs = endTimeInMs - startTimeInMs;
-
-						guessInfo.innerHTML = 'it took me ' + ( (52*i+52) + (x+1) ) + ' tries in ' + searchDurationInMs + ' ms';
+						guessInfo.innerHTML = 'it took me ' + tryCount + ' tries in ' + searchDurationInMs + ' ms';
 						computerGuessPrintout.innerHTML = computerGuessing;
 						return;
 					}
 			}
-		}//2characters
+		}
 
-	// 	for (var i=0; i<alphabet.length; i++) {
-	// 		for (var x=0; x<alphabet.length; x++) {
-	// 			for (var y=0; y<alphabet.length; y++) {
-	// 				computerGuessing = alphabet[i] + alphabet[x] + alphabet[y];
-	// 				guessInfo.innerHTML = 'This 3 letter word stumps me..';
+		for (var i=0; i<alphabet.length; i++) {
+			for (var x=0; x<alphabet.length; x++) {
+				for (var y=0; y<alphabet.length; y++) {
+					tryCount = tryCount+1
+					computerGuessing = alphabet[i] + alphabet[x] + alphabet[y];
+					guessInfo.innerHTML = 'This 3 letter word stumps me..';
 				
-	// 				if (computerGuessing === userWordStored[0]) {
-	// 					if (i===0 && x===0) { 
-	// 						guessInfo.innerHTML = 'it took me ' + ( 52+x+1 ) + ' tries'; 
-	// 						computerGuessPrintout.innerHTML = computerGuessing;
-	// 						return;
-	// 					}
-					
-	// 					guessInfo.innerHTML = 'it took me ' + ( (52*i+52) + (x+1) ) + ' tries';
-	// 					computerGuessPrintout.innerHTML = computerGuessing;
-	// 					return;
-	// 				}
-	// 			}
-	// 		}
-	// 	}//3characters
+					if (computerGuessing === userWordStored[0]) {
+							endTimeInMs = new Date().getTime();//V
+							searchDurationInMs = endTimeInMs - startTimeInMs;//V
+							guessInfo.innerHTML = 'it took me ' + tryCount + ' tries in ' + searchDurationInMs + ' ms'; 
+							computerGuessPrintout.innerHTML = computerGuessing;
+							return;
+					}
+				}
+			}
+		}
 
 	});
 
