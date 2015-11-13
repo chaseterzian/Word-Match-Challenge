@@ -1,19 +1,36 @@
-$(document).ready(function() {
-	
-	alphabet = ['a','A','b','B','c','C','d','D','e','E','f','F','g','G','h','H','i','I', 
-	            'j','J','k','K','l','L','m','M','n','N','o','O','p','P','q','Q','r','R', 
-	            's','S','t','T','u','U','v','V','w','W','x','X','y','Y','z','Z',
-	            '0','1','2','3','4','5','6','7','8','9',
-	            '!','@','#','$','%','^','&','*','(',')'];
-	extraSymbols = ['-','_','+','=','[','{',']','}','\'','|',';',':',"'",'"','<','>','?','`','~'];
+quick =    ['a','A','b','B','c','C','d','D','e','E','f','F','g','G','h','H','i','I', 
+	          'j','J','k','K','l','L','m','M','n','N','o','O','p','P','q','Q','r','R', 
+	          's','S','t','T','u','U','v','V','w','W','x','X','y','Y','z','Z'];
 
+normal   = ['a','A','b','B','c','C','d','D','e','E','f','F','g','G','h','H','i','I', 
+	          'j','J','k','K','l','L','m','M','n','N','o','O','p','P','q','Q','r','R', 
+	          's','S','t','T','u','U','v','V','w','W','x','X','y','Y','z','Z',
+	          '0','1','2','3','4','5','6','7','8','9'];
+
+moderate = ['a','A','b','B','c','C','d','D','e','E','f','F','g','G','h','H','i','I', 
+	          'j','J','k','K','l','L','m','M','n','N','o','O','p','P','q','Q','r','R', 
+	          's','S','t','T','u','U','v','V','w','W','x','X','y','Y','z','Z',
+	          '0','1','2','3','4','5','6','7','8','9',
+					  '!','@','#','$','%','^','&','*','(',')'];
+
+
+deep =     ['a','A','b','B','c','C','d','D','e','E','f','F','g','G','h','H','i','I', 
+	          'j','J','k','K','l','L','m','M','n','N','o','O','p','P','q','Q','r','R', 
+	          's','S','t','T','u','U','v','V','w','W','x','X','y','Y','z','Z',
+	          '0','1','2','3','4','5','6','7','8','9',
+					  '!','@','#','$','%','^','&','*','(',')',
+					  '-','_','+','=','[','{',']','}','\'','|',';',':',"'",'"','<','>','?','`','~'];
+
+
+function infoStream(scanMode) {
 	var tryCount = 0;
 	var userWordStored = [];
 	var computerGuessing = "a";
 	var computerGuessPrintout = document.getElementById("computer-guess");
 	var guessInfo = document.getElementById("guess-info");
 
-	$('#submit-button').on('click', function() {
+
+
 		var startTimeInMs = new Date().getTime();//V
 		var endTimeInMs = 0;//V
 		var searchDurationInMs = 0;//V
@@ -24,10 +41,10 @@ $(document).ready(function() {
 		userWordDisplay.innerHTML = userWordStored;//Shows users word
 		
 
-		for (var i=0; i<alphabet.length; i++) {
+		for (var i=0; i<scanMode.length; i++) {
 			tryCount = tryCount+1;
-			computerGuessing = alphabet[i];
-			guessInfo.innerHTML = 'This 1 letter word stumps me..';
+			computerGuessing = scanMode[i];
+			guessInfo.innerHTML = 'Dono...error 1';
 			
 			if (computerGuessing === userWordStored[0]) {
 				endTimeInMs = new Date().getTime();//V
@@ -37,12 +54,11 @@ $(document).ready(function() {
 				return;
 			}
 		}
-		
-		for (var i=0; i<alphabet.length; i++) {
-			for (var x=0; x<alphabet.length; x++) {
+		for (var i=0; i<scanMode.length; i++) {
+			for (var x=0; x<scanMode.length; x++) {
 				tryCount = tryCount+1
-				computerGuessing = alphabet[i] + alphabet[x];
-				guessInfo.innerHTML = 'This 2 letter word stumps me..';
+				computerGuessing = scanMode[i] + scanMode[x];
+				guessInfo.innerHTML = 'Dono...error 2';
 					
 					if (computerGuessing === userWordStored[0]) {
 						endTimeInMs = new Date().getTime();
@@ -53,13 +69,12 @@ $(document).ready(function() {
 					}
 			}
 		}
-
-		for (var i=0; i<alphabet.length; i++) {
-			for (var x=0; x<alphabet.length; x++) {
-				for (var y=0; y<alphabet.length; y++) {
+		for (var i=0; i<scanMode.length; i++) {
+			for (var x=0; x<scanMode.length; x++) {
+				for (var y=0; y<scanMode.length; y++) {
 					tryCount = tryCount+1
-					computerGuessing = alphabet[i] + alphabet[x] + alphabet[y];
-					guessInfo.innerHTML = 'This 3 letter word stumps me..';
+					computerGuessing = scanMode[i] + scanMode[x] + scanMode[y];
+					guessInfo.innerHTML = 'Dono...error 3';
 				
 					if (computerGuessing === userWordStored[0]) {
 							endTimeInMs = new Date().getTime();//V
@@ -71,15 +86,14 @@ $(document).ready(function() {
 				}
 			}
 		}
-
-		for (var i=0; i<alphabet.length; i++) {
-			for (var x=0; x<alphabet.length; x++) {
-				for (var y=0; y<alphabet.length; y++) {
-					for (var z=0; z<alphabet.length; z++) {
+		for (var i=0; i<scanMode.length; i++) {
+			for (var x=0; x<scanMode.length; x++) {
+				for (var y=0; y<scanMode.length; y++) {
+					for (var z=0; z<scanMode.length; z++) {
 						tryCount = tryCount+1
-						computerGuessing = alphabet[i] + alphabet[x] + alphabet[y] + alphabet[z];
-						guessInfo.innerHTML = 'This 4 letter word stumps me..';
-					
+						computerGuessing = scanMode[i] + scanMode[x] + scanMode[y] + scanMode[z];
+						guessInfo.innerHTML = 'Dono...error 4';
+					 
 						if (computerGuessing === userWordStored[0]) {
 							endTimeInMs = new Date().getTime();//V
 							searchDurationInMs = endTimeInMs - startTimeInMs;//V
@@ -91,15 +105,14 @@ $(document).ready(function() {
 				}
 			}
 		}
-
-		for (var i=0; i<alphabet.length; i++) {
-			for (var x=0; x<alphabet.length; x++) {
-				for (var y=0; y<alphabet.length; y++) {
-					for (var z=0; z<alphabet.length; z++) {
-						for (var ii=0; ii<alphabet.length; ii++) {
+		for (var i=0; i<scanMode.length; i++) {
+			for (var x=0; x<scanMode.length; x++) {
+				for (var y=0; y<scanMode.length; y++) {
+					for (var z=0; z<scanMode.length; z++) {
+						for (var ii=0; ii<scanMode.length; ii++) {
 							tryCount = tryCount+1
-							computerGuessing = alphabet[i] + alphabet[x] + alphabet[y] + alphabet[z] + alphabet[ii];
-							guessInfo.innerHTML = 'This 5 letter word stumps me..';
+							computerGuessing = scanMode[i] + scanMode[x] + scanMode[y] + scanMode[z] + scanMode[ii];
+							guessInfo.innerHTML = 'Dono...error 5';
 						
 							if (computerGuessing === userWordStored[0]) {
 								endTimeInMs = new Date().getTime();//V
@@ -113,8 +126,4 @@ $(document).ready(function() {
 				}
 			}
 		}
-
-	});
-
-
-});
+};	

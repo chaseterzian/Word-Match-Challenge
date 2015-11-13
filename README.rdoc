@@ -1,23 +1,4 @@
-Word Guess
-
-V2
--supports a string of up to 3 characters, numbers, and/or symbols (mix and match)
-
-Worst case scenarios on chrome:
-	1 characters:  72 tries
-				   1 ms
-	2 characters:  5256 tries
-				   13 ms
-	3 characters:  378504 tries
-				   503 ms
-	4 characters:  27252360 tries
-	               35695 ms
-	5 characters:  A long time
-	     "chase":  139975857 tries
-	               187884 ms			   
-___________________________________________________
-
-
+-Word Guess-
 
 Type a string of up to five characters, numbers, and/or symbols (mix and match)
 Five characters may take a long time.
@@ -30,3 +11,45 @@ enjoy!
 
 
 -Chase
+
+
+Worst case scenarios on chrome - tested on moderate mode:
+	UPDATE 1
+
+	1 characters:  72 tries
+				   0 ms
+	2 characters:  5256 tries
+				   13 ms
+	3 characters:  378504 tries
+				   503 ms
+	4 characters:  27252360 tries
+	               35695 ms
+	5 characters:  several minutes
+	     "chase":  139975857 tries
+	               187884 ms	
+	______________________________               
+	
+	ORIGINAL CONFIGURATION
+
+	1 characters:  72 tries
+				   1 ms
+	2 characters:  5256 tries
+				   13 ms
+	3 characters:  378504 tries
+				   503 ms
+	4 characters:  27252360 tries
+	               35695 ms
+	5 characters:  several minutes
+	     "chase":  139975857 tries
+	               187884 ms			   
+
+___________________________________________________
+
+
+
+
+
+
+
+
+
