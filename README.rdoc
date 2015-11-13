@@ -1,0 +1,8 @@
+V2
+-supports string of up to 2 characters or numbers.
+___________________________________________________
+
+Type a string of up to two numbers and/pr characters.
+
+The program will tell you how many guesses it took to match that string 
+(in full, not character by character)
