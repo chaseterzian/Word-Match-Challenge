@@ -1,5 +1,8 @@
 $(document).ready(function() {
-
+	
+	$('#englishWords-scan-button').on('click', function() {	
+		infoStream(englishWordList);
+	});	
 	$('#quick-scan-button').on('click', function() {
 		infoStream(quick);
 	});
@@ -9,7 +12,7 @@ $(document).ready(function() {
 	$('#moderate-scan-button').on('click', function() {
 		infoStream(moderate);
 	});
-	$('#moderate-scan-button').on('click', function() {
+	$('#deep-scan-button').on('click', function() {
 		infoStream(deep);
 	});
 

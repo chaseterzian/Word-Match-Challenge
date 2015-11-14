@@ -15,3 +15,5 @@
 //= require_tree .
 //= require style.js
 //= require app.js
+//= require englishWordList.js
+

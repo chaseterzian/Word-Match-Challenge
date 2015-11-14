@@ -23,22 +23,21 @@ deep =     ['a','A','b','B','c','C','d','D','e','E','f','F','g','G','h','H','i',
 
 
 function infoStream(scanMode) {
+	var startTimeInMs = new Date().getTime();//V
+	var endTimeInMs = 0;//V
+	var searchDurationInMs = 0;//V
+	
 	var tryCount = 0;
 	var userWordStored = [];
 	var computerGuessing = "a";
+	
 	var computerGuessPrintout = document.getElementById("computer-guess");
 	var guessInfo = document.getElementById("guess-info");
-
-
-
-		var startTimeInMs = new Date().getTime();//V
-		var endTimeInMs = 0;//V
-		var searchDurationInMs = 0;//V
-
-		var userInput = document.getElementById('user-word-input').value;
+	var userInput = document.getElementById('user-word-input').value;
 		userWordStored.push(userInput);//Stores user input value
-		var userWordDisplay = document.getElementById("user-word-display");
+	var userWordDisplay = document.getElementById("user-word-display");
 		userWordDisplay.innerHTML = userWordStored;//Shows users word
+
 		
 
 		for (var i=0; i<scanMode.length; i++) {
@@ -49,9 +48,34 @@ function infoStream(scanMode) {
 			if (computerGuessing === userWordStored[0]) {
 				endTimeInMs = new Date().getTime();//V
 				searchDurationInMs = endTimeInMs - startTimeInMs;//V
-				guessInfo.innerHTML = 'it took me ' + tryCount + ' tries in ' + searchDurationInMs + ' ms';
-				computerGuessPrintout.innerHTML = computerGuessing;
-				return;
+				// guessInfo.innerHTML = 'it took me ' + tryCount + ' tries in ' + searchDurationInMs + ' ms';
+				// computerGuessPrintout.innerHTML = computerGuessing;
+				// return;
+				if (scanMode === englishWordList) { 
+					guessInfo.innerHTML = 'it took me ' + tryCount + ' tries in ' + searchDurationInMs + ' ms with the dictionary scanning mode';
+					computerGuessPrintout.innerHTML = computerGuessing;
+					return;
+				}
+				if (scanMode === quick) { 
+					guessInfo.innerHTML = 'it took me ' + tryCount + ' tries in ' + searchDurationInMs + ' ms with the quick scanning mode';
+					computerGuessPrintout.innerHTML = computerGuessing;
+					return;
+				}
+				if (scanMode === normal) { 
+					guessInfo.innerHTML = 'it took me ' + tryCount + ' tries in ' + searchDurationInMs + ' ms with the normal scanning mode';
+					computerGuessPrintout.innerHTML = computerGuessing;
+					return;
+				}
+				if (scanMode === moderate) { 
+					guessInfo.innerHTML = 'it took me ' + tryCount + ' tries in ' + searchDurationInMs + ' ms with the moderate scanning mode';
+					computerGuessPrintout.innerHTML = computerGuessing;
+					return;
+				}
+				if (scanMode === deep) { 
+					guessInfo.innerHTML = 'it took me ' + tryCount + ' tries in ' + searchDurationInMs + ' ms with the deep scanning mode';
+					computerGuessPrintout.innerHTML = computerGuessing;
+					return;
+				}
 			}
 		}
 		for (var i=0; i<scanMode.length; i++) {
