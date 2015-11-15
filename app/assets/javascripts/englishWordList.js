@@ -1,4 +1,4 @@
-var englishWordList = ['A',
+englishWordList = ['A',
 'a',
 'aa',
 'aal',

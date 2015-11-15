@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	
 	$('#englishWords-scan-button').on('click', function() {	
-		infoStream(englishWordList);
+		dictionaryMode(englishWordList);
 	});	
 	$('#quick-scan-button').on('click', function() {
 		infoStream(quick);
