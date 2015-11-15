@@ -89,7 +89,8 @@ function infoStream(scanMode) {
 					tryCount = tryCount+1
 					computerGuessing = scanMode[i] + scanMode[x] + scanMode[y];
 					guessInfo.innerHTML = 'Error 3 - please reload';
-				
+					computerGuessPrintout.innerHTML = computerGuessing;
+
 					if (computerGuessing === userWordStored[0]) {
 							endTimeInMs = new Date().getTime();//V
 							searchDurationInMs = endTimeInMs - startTimeInMs;//V
