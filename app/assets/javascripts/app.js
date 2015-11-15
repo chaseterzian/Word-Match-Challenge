@@ -17,7 +17,7 @@ function dictionaryMode(scanMode) {
 		for (var i=0; i<scanMode.length; i++) {
 			tryCount = tryCount+1;
 			computerGuessing = scanMode[i];
-			guessInfo.innerHTML = 'Dictionary scan could not find a positive match. Please wait while the default backup scan is running.';
+			guessInfo.innerHTML = 'Dictionary scan could not find a positive match. Please wait while the default backup scan is running. This may take up to several minutes.';
 			
 			if (computerGuessing === userWordStored[0]) {
 				endTimeInMs = new Date().getTime();//V
