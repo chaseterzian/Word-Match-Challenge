@@ -1,4 +1,4 @@
-=function dictionaryMode(scanMode) {
+2function dictionaryMode(scanMode) {
 	var startTimeInMs = new Date().getTime();//V
 	var endTimeInMs = 0;//V
 	var searchDurationInMs = 0;//V
