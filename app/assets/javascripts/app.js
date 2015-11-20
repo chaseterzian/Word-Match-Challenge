@@ -6,6 +6,7 @@ function dictionaryMode(scanMode) {
 	var tryCount = 0;
 	var userWordStored = [];
 	var computerGuessing = "a";
+	var computerGuessing2 = "b";
 	
 	var computerGuessPrintout = document.getElementById("computer-guess");
 	var guessInfo = document.getElementById("guess-info");
@@ -14,12 +15,25 @@ function dictionaryMode(scanMode) {
 	var userWordDisplay = document.getElementById("user-word-display");
 		userWordDisplay.innerHTML = userWordStored;//Shows users word
 
-		for (var i=0; i<scanMode.length; i++) {
-			tryCount = tryCount+1;
+		for (var i=0; i<scanMode.length; i=i+2) {
+			tryCount = tryCount+2;
 			computerGuessing = scanMode[i];
+			computerGuessing2 = scanMode[i+1];
 			guessInfo.innerHTML = 'Dictionary scan could not find a positive match. Please wait while the default backup scan is running. This may take up to several minutes.';
 			
 			if (computerGuessing === userWordStored[0]) {
+				endTimeInMs = new Date().getTime();//V
+				searchDurationInMs = endTimeInMs - startTimeInMs;//V
+				guessInfo.innerHTML = 'it took me ' + tryCount + ' tries in ' + searchDurationInMs + ' ms';
+				computerGuessPrintout.innerHTML = computerGuessing;
+
+				setTimeout(function(){
+					location.reload();
+				}, 5000);
+				return;
+			}
+
+			if (computerGuessing2 === userWordStored[0]) {
 				endTimeInMs = new Date().getTime();//V
 				searchDurationInMs = endTimeInMs - startTimeInMs;//V
 				guessInfo.innerHTML = 'it took me ' + tryCount + ' tries in ' + searchDurationInMs + ' ms';
