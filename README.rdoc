@@ -1,21 +1,4 @@
--Word Guess-
-
-
-Type a string of characters, numbers, and/or symbols in the input field (mix and match)
-Click dictonary mode to begin the search.
-If the search is successfull, your results will show at the bottom of the info windows
-If the search fails, you will be informed that the search mode has switched from dictionary to moderate.
-Dictionary may handle strings of any length quickly, however, moderate mode begins to take a siginificant
- 	ammount of time to match strings with five characters or more.
-If the moderate search is successful, your results will show at the bottom of the info windows
-Take care to reload between searches
-
-The program will tell you how many guesses it took to match the string, and
-	how much time passed in ms. For the program to guess the correct string, it will guess the 
-	entire string at once, rather than matching letter by letter.
-
-Other search modes are available to use
-**currently an auto clear function is being tested in dictionary mode
+-Word Guess- In Development
 
 
 enjoy!
