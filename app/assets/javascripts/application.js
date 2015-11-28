@@ -17,4 +17,5 @@
 //= require app.js
 //= require englishWordList.js
 //= require letterBanks.js
+//= require dictionary.js
 
