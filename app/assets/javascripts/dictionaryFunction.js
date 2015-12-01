@@ -20,7 +20,7 @@ function dictionaryMode(scanMode) {
 		userWordDisplay.innerHTML = userWordStored;//Shows users word
 
 		for (var i=0; i<scanMode.length; i=i+6) {
-			tryCount = tryCount+4;//revise
+			tryCount = tryCount+5;//revise
 			computerGuessing = scanMode[i];
 			computerGuessing2 = scanMode[i+1];
 			computerGuessing3 = scanMode[i+2];

@@ -13,9 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-//= require style.js
-//= require app.js
+//= require dataControls.js
+//= require infoStreamFunction.js
 //= require englishWordList.js
 //= require letterBanks.js
-//= require dictionary.js
+//= require dictionaryFunction.js
 
